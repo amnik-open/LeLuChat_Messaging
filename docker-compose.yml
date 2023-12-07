@@ -1,0 +1,15 @@
+networks:
+  auth:
+      name: auth
+      external: true
+services:
+  messaging:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8002
+    container_name: leluchat_messaging
+    volumes:
+      - .:/code
+    ports:
+      - "8002:8002"
+    networks:
+      - auth
