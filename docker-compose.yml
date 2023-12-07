@@ -1,6 +1,6 @@
 networks:
-  auth:
-      name: auth
+  leluchat:
+      name: leluchat
       external: true
 services:
   messaging:
@@ -12,4 +12,4 @@ services:
     ports:
       - "8002:8002"
     networks:
-      - auth
+      - leluchat
