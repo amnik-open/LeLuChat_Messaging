@@ -160,6 +160,18 @@ class Dev(Configuration):
 
     LELUCHAT_MESSAGE_GATEWAY = values.Value('http://arsenal:8001/v1/arsenal/gates/messages/')
 
+    RABBITMQ = values.DictValue({
+        'default': {
+            'HOST': 'rabbitmq',
+            'PORT': '5672',
+            'VIRTUAL_HOST': '/',
+            'USER': 'user',
+            'PASSWORD': 'password',
+            'retry': 5,
+            'wait': 2,
+        }
+    })
+
 
 class Prod(Dev):
     DEBUG = False
